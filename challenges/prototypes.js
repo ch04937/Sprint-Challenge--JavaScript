@@ -18,8 +18,8 @@ function CuboidMaker(dimension){
   
   Formula for cuboid volume: length * width * height
 */
-CuboidMaker.prototype.volume = function (){
-  return `${dimension.length*dimension.width*dimension.height}`;
+CuboidMaker.prototype.volume = function (length, width, height){
+  return length*width*height;
 };
 
 /* == Step 3: Surface Area Method ==
@@ -27,8 +27,8 @@ CuboidMaker.prototype.volume = function (){
 
   Formula for cuboid surface area of a cube: 2 * (length * width + length * height + width * height)
 */
-CuboidMaker.prototype.surfaceArea = function (){
-  return 2*(dimension.length*dimension.width + dimension.length*dimension.height + dimension.width*dimension.height);
+CuboidMaker.prototype.surfaceArea = function (length,width,height){
+  return 2*(length*width +length*height + width*height);
 };
 
 
