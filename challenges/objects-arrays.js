@@ -50,9 +50,7 @@ console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-let roar = function(){
-  return `RAWERSRARARWERSARARARRRR!`;
-}
+let roar = () => `RAWERSRARARWERSARARARRRR!`;
 tyrannosaurus.roar =roar;
 
 console.log(tyrannosaurus.roar());
@@ -99,7 +97,9 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
-graduates.includes(id => id.university == 'Uni');
+for (let i = 0; i < graduates.length; i++){
+  uni.push(graduates[i].university.match(/Uni/))
+}
 
 console.log(uni);
 
@@ -135,8 +135,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
-zooAnimals.map(lower => `${lower.animalName}`);
+const lowerCase = zooAnimals.map((zooAnimal, index, zooAnimals) =>{
+  return zooAnimal.animal_name.toLowerCase();
+}); 
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -144,7 +145,11 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const lowerPopulation = zooAnimals.filter(population=> population.population < 5 );
+const lowerPopulation = zooAnimals.filter(zooAnimal=> {
+  if (zooAnimal.population < 5){
+    return true;
+  };
+});
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 

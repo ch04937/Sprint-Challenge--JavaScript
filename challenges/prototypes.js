@@ -5,7 +5,7 @@
 /* == Step 1: Base Constructor ==
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height
 */
-function CuboidMaker(dimension){
+//function CuboidMaker(dimension){
   this.length= dimension.length;
   this.width = dimension.width;
   this. height = dimension.height; 
